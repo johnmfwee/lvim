@@ -13,17 +13,9 @@ end
 
 lvim.builtin.treesitter.ensure_installed = "all"
 lvim.builtin.treesitter.autotag.enable = true
-lvim.builtin.treesitter.autotag = {
-  enabled = true,
-}
 
 lvim.builtin.treesitter.autopairs = {
   enabled = true,
-}
-
-lvim.builtin.treesitter.indent = {
-  enabled = true,
-  disable = { "python", "css", "rust" },
 }
 
 lvim.builtin.treesitter.textobjects = {
