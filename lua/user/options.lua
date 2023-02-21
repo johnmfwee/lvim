@@ -1,4 +1,4 @@
-lvim.colorscheme = "github"
+lvim.colorscheme = "darkplus"
 lvim.log.level = "warn"
 lvim.builtin.alpha.active = true
 lvim.lsp.diagnostics.float.focusable = true
