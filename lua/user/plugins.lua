@@ -74,6 +74,7 @@ lvim.plugins = {
     build = "cd js && npm ci",
   },
   -- { "tzachar/cmp-tabnine", build = "./install.sh" },
+  -- {"codata/tabnine-vim", run="./dl_binaries.sh" },
   {
     "zbirenbaum/copilot.lua",
     -- event = { "VimEnter" },
@@ -87,7 +88,7 @@ lvim.plugins = {
   },
   {
     "zbirenbaum/copilot-cmp",
-    -- after = { "copilot.lua" },
+    after = { "copilot.lua" },
     config = function()
       require("copilot_cmp").setup {
         formatters = {
@@ -96,14 +97,31 @@ lvim.plugins = {
       }
     end,
   },
-  -- "MunifTanjim/nui.nvim",
-  -- {
-  --   "folke/noice.nvim",
-  --   event = "VimEnter",
-  --   config = function()
-  --     require("noice").setup()
-  --   end,
-  -- },
+  "MunifTanjim/nui.nvim",
+  {
+    "folke/noice.nvim",
+    event = "VimEnter",
+    config = function()
+      require("noice").setup {
+        lsp = {
+          -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+          override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            ["vim.lsp.util.stylize_markdown"] = true,
+            ["cmp.entry.get_documentation"] = true,
+          },
+        },
+        -- you can enable a preset for easier configuration
+        presets = {
+          bottom_search = true, -- use a classic bottom cmdline for search
+          command_palette = true, -- position the cmdline and popupmenu together
+          long_message_to_split = true, -- long messages will be sent to a split
+          inc_rename = false, -- enables an input dialog for inc-rename.nvim
+          lsp_doc_border = false, -- add a border to hover docs and signature help
+        },
+      }
+    end,
+  },
 
   -- https://github.com/jose-elias-alvarez/typescript.nvim
   -- "rmagatti/auto-session",
