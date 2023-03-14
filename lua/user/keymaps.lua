@@ -9,6 +9,16 @@ local keymap = vim.keymap.set
 keymap("n", "<C-Space>", "<cmd>WhichKey \\<space><cr>", opts)
 keymap("n", "<C-i>", "<C-i>", opts)
 
+-- Insert
+keymap("i", "<C-b>", "<ESC>^i", opts)
+keymap("i", "<C-e>", "<End>", opts)
+
+-- Navigation in Insert Mode
+keymap("i", "<C-h>", "<Left>", opts)
+keymap("i", "<C-l>", "<Right>", opts)
+keymap("i", "<C-j>", "<Down>", opts)
+keymap("i", "<C-k>", "<Up>", opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<m-h>", "<C-w>h", opts)
@@ -53,7 +63,6 @@ keymap("n", "g#", "g#zz", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
 
 keymap("x", "p", [["_dP]])
 -- keymap("v", "p", '"_dp', opts)
