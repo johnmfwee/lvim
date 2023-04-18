@@ -94,7 +94,9 @@ lvim.plugins = {
     event = "InsertEnter",
     build = "./install.sh",
   },
-  -- "MunifTanjim/nui.nvim",
+
+  "MunifTanjim/nui.nvim",
+  "Bryley/neoai.nvim",
   -- {
   --   "folke/noice.nvim",
   --   event = "VimEnter",
