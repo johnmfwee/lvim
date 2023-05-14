@@ -11,7 +11,6 @@ formatters.setup {
     filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "css" },
     extra_args = { "--no-semi", "--single-quote", "--bracket-spacing" },
   },
-}
 
 -- lvim.lsp.on_attach_callback = function(client, bufnr)
 -- end
