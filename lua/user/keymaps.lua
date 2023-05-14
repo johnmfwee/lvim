@@ -11,7 +11,7 @@ keymap("n", "<C-i>", "<C-i>", opts)
 
 -- Insert
 keymap("i", "<C-b>", "<ESC>^i", opts)
-keymap("i", "<C-e>", "<End>", opts)
+keymap("i", "<C-f>", "<End>", opts)
 
 -- Navigation in Insert Mode
 keymap("i", "<C-h>", "<Left>", opts)
@@ -65,7 +65,7 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 keymap("x", "p", [["_dP]])
--- keymap("v", "p", '"_dp', opts)
+-- keymap("v", ; "p", '"_dp', opts)
 -- keymap("v", "P", '"_dP', opts)
 
 keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
