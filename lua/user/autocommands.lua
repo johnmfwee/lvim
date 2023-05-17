@@ -24,7 +24,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     "lir",
     "DressingSelect",
     "tsplayground",
-    "Markdown",
     "",
   },
   callback = function()
@@ -47,8 +46,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-  pattern = { "" },
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "BufEnter" }, {
+  pattern = { "*" },
   callback = function()
     local buf_ft = vim.bo.filetype
     if buf_ft == "" or buf_ft == nil then
@@ -71,32 +70,20 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
       local project_name = project_dir[#project_dir]
       return project_name
     end
-
-    vim.opt.titlestring = get_project_dir() .. " - nvim"
+    vim.opt.titlestring = get_project_dir()
   end,
 })
 
--- vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
---   pattern = { "*" },
---   callback = function()
---     vim.cmd "startinsert"
---     -- TODO: if java = 2
---     -- vim.cmd "set cmdheight=1"
---   end,
--- })
-
-vim.cmd [[
-" autocmd FileType toggleterm nnoremap <buffer> <CR> :startinsert<CR>
-
-  autocmd BufEnter * if &filetype ==# 'toggleterm' | startinsert! | endif
-]]
+-- vim.cmd [[
+-- " autocmd FileType toggleterm nnoremap <buffer> <CR> :startinsert<CR>
+--   autocmd BufEnter * if &filetype ==# 'toggleterm' | startinsert! | endif
+-- ]]
 
 -- vim.api.nvim_create_autocmd({ "BufEnter" }, {
 --   pattern = { "term://*" },
 --   callback = function()
 --     vim.cmd "startinsert"
---     -- TODO: if java = 2
---     vim.cmd "set cmdheight=1"
+--     -- vim.cmd "set cmdheight=1"
 --   end,
 -- })
 

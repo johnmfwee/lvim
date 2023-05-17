@@ -1,7 +1,17 @@
 -- Additional Plugins
 lvim.plugins = {
-
-  "ChristianChiarulli/onedark.nvim",
+  -- {
+  --   dir = "/Users/chris/Repos/bookmark.nvim",
+  -- },
+  {
+    "kndndrj/nvim-dbee",
+    build = function()
+      require("dbee").install()
+    end,
+  },
+  "kkharji/sqlite.lua",
+  { url = "git@github.com:ChristianChiarulli/bookmark.nvim.git" },
+  { url = "git@github.com:ChristianChiarulli/onedark.nvim.git" },
   -- { "christianchiarulli/tabnine-nvim", build = "./dl_binaries.sh", branch = "suggestion_hl_group" },
   "stevearc/dressing.nvim",
   "AckslD/swenv.nvim",
@@ -14,7 +24,7 @@ lvim.plugins = {
   "christianchiarulli/nvim-ts-autotag",
   "kylechui/nvim-surround",
   "christianchiarulli/harpoon",
-  "MattesGroeger/vim-bookmarks",
+  -- "MattesGroeger/vim-bookmarks",
   "NvChad/nvim-colorizer.lua",
   "moll/vim-bbye",
   "folke/todo-comments.nvim",
@@ -96,7 +106,6 @@ lvim.plugins = {
     "hrsh7th/cmp-emoji",
     event = "BufRead",
   },
-
   -- "folke/noice.nvim",
   -- "rcarriga/nvim-notify",
 
