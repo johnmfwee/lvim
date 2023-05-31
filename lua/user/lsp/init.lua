@@ -11,6 +11,7 @@ formatters.setup {
     filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "css" },
     extra_args = { "--no-semi", "--single-quote", "--bracket-spacing" },
   },
+}
 
 -- lvim.lsp.on_attach_callback = function(client, bufnr)
 -- end
@@ -18,4 +19,3 @@ formatters.setup {
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
 --   { command = "eslint_d", filetypes = { "javascript" } },
-}
